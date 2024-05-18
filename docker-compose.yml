@@ -7,7 +7,7 @@ services:
         soft: 20000
         hard: 40000
     image: mmmaxwwwell/space-engineers-dedicated-docker-linux:v2
-    # build: .
+    #build: .
     container_name: space-engineers-dedicated-docker-linux
     restart: unless-stopped
     volumes:
