@@ -13,14 +13,14 @@ fi
 # fi
 
 # #check if /appdata/space-engineers/config/SpaceEngineers-Dedicated.cfg is a file
-if [ ! -f "/appdata/space-engineers/World/SpaceEngineers-Dedicated.cfg" ]; then
+if [ ! -f "/appdata/space-engineers/SpaceEngineers-Dedicated.cfg" ]; then
   echo "SpaceEngineers-Dedicated.cfg file does not exist, exiting."
   exit 131
 else
-  sed -i '/LoadWorld/c\<LoadWorld>Z:\\appdata\\space-engineers\\World</LoadWorld>' /appdata/space-engineers/World/SpaceEngineers-Dedicated.cfg
+  sed -i '/LoadWorld/c\<LoadWorld>Z:\\appdata\\space-engineers\\World</LoadWorld>' /appdata/space-engineers/SpaceEngineers-Dedicated.cfg
   rm -rf /appdata/space-engineers/SpaceEngineersDedicated/SpaceEngineers-Dedicated.cfg
-  cp /appdata/space-engineers/World/SpaceEngineers-Dedicated.cfg /appdata/space-engineers/SpaceEngineersDedicated/SpaceEngineers-Dedicated.cfg
-  cat /appdata/space-engineers/World/SpaceEngineers-Dedicated.cfg
+  cp /appdata/space-engineers/SpaceEngineers-Dedicated.cfg /appdata/space-engineers/SpaceEngineersDedicated/SpaceEngineers-Dedicated.cfg
+  cat /appdata/space-engineers/SpaceEngineers-Dedicated.cfg
 fi
 
 tree /appdata/space-engineers/Plugins
