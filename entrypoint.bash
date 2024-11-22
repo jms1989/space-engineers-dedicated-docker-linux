@@ -32,7 +32,7 @@ chown -R 1000:1000 /appdata
 runuser -l wine bash -c 'steamcmd +force_install_dir /appdata/space-engineers/SpaceEngineersDedicated +login anonymous +@sSteamCmdForcePlatformType windows +app_update 298740 +quit'
 
 #get the mod definition lines from the config
-mod_list=$(cat /appdata/space-engineers/World/World/Sandbox_config.sbc | grep PublishedFileId | grep -oE '>.*<' | tr -d '<' | tr -d '>' | tr '\n' ' ')
+mod_list=$(cat /appdata/space-engineers/World/Sandbox_config.sbc | grep PublishedFileId | grep -oE '>.*<' | tr -d '<' | tr -d '>' | tr '\n' ' ')
 echo "Parsed mods: $mod_list"
 
 #assemble mod download string
