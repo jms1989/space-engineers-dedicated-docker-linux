@@ -11,5 +11,9 @@ fi
 
 $DOCKER_COMMAND volume create $WORLD_VOLUME_NAME
 $DOCKER_COMMAND volume create $PLUGINS_VOLUME_NAME
+$DOCKER_COMMAND volume create $BINS_VOLUME_NAME
+$DOCKER_COMMAND volume create $STEAMCMD_VOLUME_NAME
 $DOCKER_COMMAND run --rm --name space-engineers-dedicated-docker-linux-setup -v $WORLD_VOLUME_NAME:/world -v ./star-system.zip:/star-system.zip alpine unzip -n /star-system.zip -d world
 $DOCKER_COMMAND run --rm --name space-engineers-dedicated-docker-linux-setup -v $WORLD_VOLUME_NAME:/world alpine chown -R 1000:1000 /world
+$DOCKER_COMMAND run --rm --name space-engineers-dedicated-docker-linux-setup -v $BINS_VOLUME_NAME:/bins alpine chown -R 1000:1000 /bins
+$DOCKER_COMMAND run --rm --name space-engineers-dedicated-docker-linux-setup -v $STEAMCMD_VOLUME_NAME:/steamcmd alpine chown -R 1000:1000 /steamcmd
