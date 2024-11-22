@@ -12,6 +12,7 @@ services:
     restart: unless-stopped
     volumes:
       - world:/appdata/space-engineers/World
+      - ./volumes/SpaceEngineers-Dedicated.cfg:/appdata/space-engineers/SpaceEngineers-Dedicated.cfg
       - plugins:/appdata/space-engineers/Plugins
       - bins:/appdata/space-engineers/SpaceEngineersDedicated
       - steamcmd:/home/wine
